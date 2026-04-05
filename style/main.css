@@ -1,0 +1,280 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #fffafc;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      z-index: 2000;
+      background: #ffffff;
+      color: #8c2f66;
+      border: 2px solid #ff69b4;
+      border-radius: 10px;
+      padding: 0.65rem 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+    }
+
+    /* cores principais: rosa, lilás, branco */
+    :root {
+      --pink: #ff69b4;
+      --lilac: #c8a2c8;
+      --soft-lilac: #e6d3e6;
+      --white: #ffffff;
+      --shadow-sm: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.03);
+      --shadow-hover: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* tipografia amigável */
+    h1, h2, h3, .btn, .card-title {
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    h2 {
+      color: #d96cbe;
+      font-weight: 700;
+      border-left: 6px solid var(--pink);
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* elementos arredondados e sombras */
+    .card, .hero-card, .cta-card, footer {
+      border-radius: 2rem;
+      border: none;
+    }
+
+    .card {
+      transition: all 0.3s ease;
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .btn-whatsapp-custom {
+      background-color: #25D366;
+      border: none;
+      border-radius: 60px;
+      padding: 12px 24px;
+      font-weight: 600;
+      color: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-whatsapp-custom:hover {
+      background-color: #20b859;
+      transform: scale(1.02);
+      color: white;
+      box-shadow: 0 8px 18px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-outline-pink {
+      border-radius: 60px;
+      border: 2px solid var(--pink);
+      background: transparent;
+      color: var(--pink);
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .btn-outline-pink:hover {
+      background: var(--pink);
+      color: white;
+      transform: scale(1.02);
+      border-color: var(--pink);
+    }
+
+    .btn-pink-solid {
+      background-color: var(--pink);
+      border-radius: 60px;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      color: white;
+      transition: all 0.2s;
+    }
+
+    .btn-pink-solid:hover {
+      background-color: #e05a9e;
+      transform: scale(1.02);
+      color: white;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid #7b2e5e;
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    /* hero background */
+    .hero-section {
+      background: linear-gradient(135deg, #fff3f9 0%, #fde9f2 100%);
+      border-radius: 0 0 3rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "✨🌸";
+      font-size: 160px;
+      position: absolute;
+      bottom: -20px;
+      right: -30px;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    /* grid galeria estilo instagram */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .gallery-item {
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* animações fade-in */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* botão flutuante WhatsApp */
+    .float-wpp {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 1030;
+      background-color: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .float-wpp i {
+      font-size: 34px;
+      color: white;
+    }
+
+    .float-wpp:hover {
+      transform: scale(1.08);
+      background-color: #20b359;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .fade-up {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* footer */
+    footer a {
+      color: #b95f9b;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--pink);
+      text-decoration: underline;
+    }
+
+    /* cartões de produtos preços */
+    .price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--pink);
+    }
+
+    /* responsividade */
+    @media (max-width: 576px) {
+      .hero-section h1 {
+        font-size: 2.2rem;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .card-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* coração e detalhes */
+    .cute-icon {
+      font-size: 1.8rem;
+      vertical-align: middle;
+    }
